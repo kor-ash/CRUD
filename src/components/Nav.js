@@ -4,6 +4,7 @@ import styles from './Nav.module.css'
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import useDetectClose from '../hooks/useDetectCLose';
 const Nav = ({ isLog, setLog }) => {
     const [isHover, setHover] = useState(false)
     return (
@@ -31,6 +32,7 @@ const Nav = ({ isLog, setLog }) => {
             </div>
             {isLog &&
                 <div>
+
                     <Link to="/" onClick={() => setLog(false)}>
                         <FontAwesomeIcon className={styles.icon} icon={faArrowRightFromBracket} onMouseOver={() => {
                             setHover(true)

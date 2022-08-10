@@ -4,7 +4,7 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from './Login.module.css'
-import { faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Login = ({ isLog, setLog }) => {
     useEffect(() => {
         console.log("Changed! ")
@@ -28,7 +28,7 @@ const Login = ({ isLog, setLog }) => {
                     <h2>Log-in</h2>
                     <div className={styles.login_sns}>
                         <span><FontAwesomeIcon icon={faInstagram} size="2x" /></span>
-                        <span><FontAwesomeIcon icon={faFacebook} size="2x" /></span>
+                        <span><FontAwesomeIcon icon={faFacebookF} size="2x" /></span>
                         <span><FontAwesomeIcon icon={faTwitter} size="2x" /></span>
                     </div>
                     <div className={styles.login_id}>

@@ -7,8 +7,18 @@ import Home from './components/Home';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from './components/Login';
 import Logout from './components/Logout';
+import axios from 'axios';
 const App = () => {
+  const sendRequest = async () => {
+    const response = await axios.get('http://localhost:8080');
+    console.log("response:", response);
+    console.log("data:", response.data);
+  };
   const [isLog, setLog] = useState(false)
+  useEffect(() => {
+    sendRequest()
+  }, [])
+  const [boardName, setBoardName] = useState("")
   return (
     <div className={styles.Wrapper}>
       <Router>
@@ -18,8 +28,9 @@ const App = () => {
         }
         {!isLog && <Login isLog={isLog} setLog={setLog} />}
         <Routes>
-          <Route path="/" element={<Home isLog={isLog} setLog={setLog}></Home>}></Route>
+          <Route path="/" element={isLog && <Home boardName={boardName} setBoardName={setBoardName} isLog={isLog} setLog={setLog}></Home>}></Route>
           <Route path="/info" element={<Content />}></Route>
+          <Route path={`/${boardName}`} element={<Content boardName={boardName} />} />
         </Routes>
       </Router>
     </div>
