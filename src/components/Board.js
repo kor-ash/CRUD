@@ -7,11 +7,10 @@ const Board = ({ name, boardName, setBoardName }) => {
     return (
         <div className={styles.BoardPlate}>
             <div className={styles.BoardHeader}>
-                <div className={styles.Dummy}></div>
                 <div className={styles.Boardtitle}> {name}</div>
                 <div className={styles.BoardMore}>
                     <Link to={`/${name}`} onClick={() => setBoardName(name)}>
-                        <FontAwesomeIcon icon={faPlus} />
+                        <FontAwesomeIcon icon={faPlus} size="1.2x" />
                     </Link>
                 </div>
             </div>

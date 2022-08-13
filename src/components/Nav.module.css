@@ -11,6 +11,5 @@ nav>div {
 }
 
 .icon:hover {
-    content: "Hi";
     color: red
 }

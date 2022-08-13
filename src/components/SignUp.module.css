@@ -5,14 +5,7 @@ HTML CSSResult Skip Results Iframe EDIT ON * {
     font-family: "Noto Sans KR", sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
 
-li {
-    list-style: none;
-}
 
 .SignUp {
     margin-left: 20px;
@@ -51,27 +44,6 @@ h2 {
     font-size: 2em;
 }
 
-.login_sns {
-    padding: 10px;
-    display: flex;
-}
-
-.login_sns span {
-    width: 130%;
-    border: solid;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    margin: 25px;
-    border-radius: 50px;
-    background: white;
-    font-size: 20px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4), -3px -3px 5px rgba(0, 0, 0, 0.1);
-}
-
 .login_id {
     margin-top: -50px;
     width: 80%;
@@ -102,17 +74,6 @@ h2 {
     outline: none;
 }
 
-.login_etc {
-    margin-top: 35px;
-    padding: 10px;
-    width: 80%;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-}
-
 .submit {
     margin-top: 50px;
     width: 80%;
@@ -128,12 +89,4 @@ h2 {
     color: white;
     font-size: 1.2em;
     letter-spacing: 2px;
-}
-
-.Forgot_pw:hover {
-    background-color: orange;
-}
-
-.SignUp:hover {
-    background-color: orange;
 }
