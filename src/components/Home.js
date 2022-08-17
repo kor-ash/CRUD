@@ -10,10 +10,10 @@ const Home = ({ isLog, setLog, boardName, setBoardName }) => {
     return (
         <div className={styles.HomeBackground}>
             <div className={styles.BoardContainer}>
-                <Board className={styles.BoardContent} boardName={boardName} setBoardName={setBoardName} name="Web" />
-                <Board className={styles.BoardContent} boardName={boardName} setBoardName={setBoardName} name="App" />
-                <Board className={styles.BoardContent} boardName={boardName} setBoardName={setBoardName} name="AI" />
-                <Board className={styles.BoardContent} boardName={boardName} setBoardName={setBoardName} name="Secure" />
+                <Board className={styles.BoardContent} boardName="Web" setBoardName={setBoardName} name="Web" />
+                <Board className={styles.BoardContent} boardName="App" setBoardName={setBoardName} name="App" />
+                <Board className={styles.BoardContent} boardName="AI" setBoardName={setBoardName} name="AI" />
+                <Board className={styles.BoardContent} boardName="Secure" setBoardName={setBoardName} name="Secure" />
             </div>
         </div>
     );

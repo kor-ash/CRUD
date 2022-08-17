@@ -27,6 +27,7 @@ const SignUp = () => {
         }).then(res => {
             isSign = res.data.success
             pwlenViolate = res.data.pwlenViolate
+            console.log(res.data)
             if (isSign)
                 alert("회원가입 성공!")
             else {

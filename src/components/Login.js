@@ -7,9 +7,6 @@ import styles from './Login.module.css'
 import { faInstagram, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import axios from 'axios';
 const Login = ({ isLog, setLog, isSign, setSign }) => {
-    useEffect(() => {
-        console.log("isLog가 업데이트 됨", isLog)
-    }, [isLog])
     const sendRequest = async () => {
         const response = await axios.get('http://localhost:5000/api/hello');
         console.log("data:", response.data);

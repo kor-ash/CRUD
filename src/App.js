@@ -9,7 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from './components/Login';
 import Logout from './components/Logout';
 import axios from 'axios';
+import ContentPost from './components/ContentPost';
 const App = () => {
+  const [boardText, setBoardText] = useState({ "Web": [], "App": [], "AI": [], "Secure": [] })
   const [isLog, setLog] = useState(false)
   const [isSign, setSign] = useState(false)
   const [boardName, setBoardName] = useState("")
@@ -26,7 +28,8 @@ const App = () => {
           {!isLog && <Route path="/home" element={<Login isLog={isLog} setLog={setLog} />}></Route>}
           {!isLog && <Route path="/signup" element={<SignUp />}></Route>}
           {isLog && <Route path="/info" element={<Content />}></Route>}
-          {isLog && <Route path={`/${boardName}`} element={<Content boardName={boardName} />} />}
+          {isLog && <Route path={boardName + "/post"} element={<ContentPost boardName={boardName} boardText={boardText} setBoardText={setBoardText} />}></Route>}
+          {isLog && <Route path={`/${boardName}`} element={<Content boardName={boardName} boardText={boardText} setBoardText={setBoardText} />} />}
         </Routes>
       </Router>
     </div >

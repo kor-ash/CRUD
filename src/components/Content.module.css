@@ -10,7 +10,7 @@
 
 .ContentHeader {
     display: flex;
-    height: 100px;
+    height: 115px;
 }
 
 .ContentTitle {
@@ -22,13 +22,48 @@
     border-bottom: solid 1px black;
 }
 
+.PostHeader {
+    margin-left: 300px;
+    height: 25px;
+}
+
+.PostContent {
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 500px;
+}
+
+.PostButton {
+    margin-left: 1320px;
+}
+
+.PostHeader>input {
+    text-align: center;
+    margin-top: 30px;
+    width: 70%;
+    height: 100%;
+}
+
+.PostContainer {
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 80%;
+    height: 600px;
+    background-color: lavenderblush;
+}
+
 .ContentSearch {
+    display: flex;
+    margin-top: 15px;
     height: 99px;
     width: 40%;
     border-bottom: solid 1px black;
+    justify-content: space-between;
 }
 
 .ContentSearch>input {
+    width: 70%;
     margin-top: 30px;
     height: 40px;
     margin-bottom: 15px;
@@ -36,15 +71,13 @@
 }
 
 .ContentButtonSearch {
-    margin-left: 15px;
-    margin-top: 15px;
-    font-size: 40px;
-    border: solid 1px red;
+    margin-left: 25px;
+    margin-top: 35px;
+    font-size: 35px;
 
 }
 
 .ContentButtonEdit {
-    font-size: 40px;
+    font-size: 35px;
     width: 100px;
-    border: solid 1px red;
 }
