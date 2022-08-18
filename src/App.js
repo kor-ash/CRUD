@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import axios from 'axios';
 import ContentPost from './components/ContentPost';
+import ContentEach from './components/ContentEach';
 const App = () => {
   const [boardText, setBoardText] = useState({ "Web": [], "App": [], "AI": [], "Secure": [] })
   const [isLog, setLog] = useState(false)
@@ -30,6 +31,7 @@ const App = () => {
           {isLog && <Route path="/info" element={<Content />}></Route>}
           {isLog && <Route path={boardName + "/post"} element={<ContentPost boardName={boardName} boardText={boardText} setBoardText={setBoardText} />}></Route>}
           {isLog && <Route path={`/${boardName}`} element={<Content boardName={boardName} boardText={boardText} setBoardText={setBoardText} />} />}
+          {isLog && <Route path=":boardName/:id" element={<ContentEach boardName={boardName} boardText={boardText} setBoardText={setBoardText} />} />}
         </Routes>
       </Router>
     </div >

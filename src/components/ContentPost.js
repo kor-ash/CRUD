@@ -18,7 +18,8 @@ const ContentPost = ({ boardName, boardText, setBoardText }) => {
         axios.post('http://localhost:5000/api/users/post', {
             title: title,
             text: text,
-            boardName: boardName
+            boardName: boardName,
+            idx: boardText[boardName].length
         }).then(res => {
             let t = boardText
             let tmp = boardText[boardName]

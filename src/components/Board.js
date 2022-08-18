@@ -24,10 +24,11 @@ const Board = ({ name, boardName, setBoardName }) => {
                     </Link>
                 </div>
             </div>
-            <div className={styles.BoardContent}>
-                {lis.map((item, idx) => <li key={idx}>{item.title} {item.text}</li>
-                )}
-            </div>
+            {lis.map((item, idx) => idx <= 3 ?
+                <li className={styles.BoardContent} key={idx}>
+                    <Link to={"../" + boardName + "/" + idx}>{item.title}</Link>
+                </li> : null
+            )}
         </div>
     );
 };

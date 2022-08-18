@@ -10,6 +10,7 @@ const SignUp = () => {
         console.log("data:", response.data);
     };
     const [id, setId] = useState("")
+    const [nick, setNick] = useState("")
     const [password, setPw] = useState("")
     const onIdChange = (e) => {
         setId(e.target.value)
@@ -17,16 +18,22 @@ const SignUp = () => {
     const onPwChange = (e) => {
         setPw(e.target.value)
     }
+    const onNickChange = (e) => {
+        setNick(e.target.value)
+    }
     const onSubmit = () => {
         //서버에 insert
         let isSign = false
         let pwlenViolate = false
+        let nickViloate = false
         axios.post('http://localhost:5000/api/users/register', {
             email: id,
-            password: password
+            password: password,
+            nick: nick
         }).then(res => {
             isSign = res.data.success
             pwlenViolate = res.data.pwlenViolate
+            nickViloate = res.data.nickViolate
             console.log(res.data)
             if (isSign)
                 alert("회원가입 성공!")
@@ -34,8 +41,12 @@ const SignUp = () => {
                 if (pwlenViolate) {
                     alert("비밀번호는 5자리 이상이여야 합니다.")
                 }
-                else
-                    alert("중복된 아이디가 존재합니다.")
+                else {
+                    if (nickViloate)
+                        alert("닉네임이 중복됩니다.")
+                    else
+                        alert("중복된 아이디가 존재합니다.")
+                }
             }
         })
     }
@@ -50,9 +61,14 @@ const SignUp = () => {
                         <h4>E-mail</h4>
                         <input value={id} onChange={onIdChange} type="email" placeholder="Email" />
                     </div>
+
                     <div className={styles.login_pw}>
                         <h4>Password</h4>
                         <input value={password} onChange={onPwChange} type="password" placeholder="Password" />
+                    </div>
+                    <div className={styles.login_nickname}>
+                        <h4>닉네임</h4>
+                        <input value={nick} onChange={onNickChange} type="email" placeholder="닉네임" />
                     </div>
                     <div className={styles.submit} >
                         <Link to="/"><input type="submit" value="Sign-Up" onClick={onSubmit} /></Link>

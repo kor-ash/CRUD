@@ -22,6 +22,36 @@
     border-bottom: solid 1px black;
 }
 
+.ContentEachContainer {
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 80%;
+    height: 600px;
+    background-color: white;
+}
+
+.ContentEachTitle {
+    height: 45px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 15px;
+    background-color: antiquewhite;
+}
+
+.ContentEachInfo {
+    border: solid 1px black;
+    height: 35px;
+    margin-top: 15px;
+}
+
+.ContentEachText {
+    margin-top: 20px;
+    height: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
 .PostHeader {
     margin-left: 300px;
     height: 25px;
