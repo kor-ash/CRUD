@@ -4,7 +4,15 @@ import styles from './Nav.module.css'
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-const Nav = ({ isLog, setLog }) => {
+const Nav = ({ isLog, setLog, nick }) => {
+    const [stat, setStat] = useState(false)
+    const onHover = () => {
+        setStat(true)
+    }
+    const offHover = () => {
+        setStat(false)
+    }
+
     return (
         <nav className={styles.wrapper}>
             {/* 하단 네비게이션 최상위 태그 */}
@@ -25,7 +33,9 @@ const Nav = ({ isLog, setLog }) => {
             </div>
             <div>
                 <Link to="/home/info">
-                    <FontAwesomeIcon className={styles.icon} icon="user" />
+                    <FontAwesomeIcon className={styles.iconInfo} icon="user" onMouseOver={onHover} onMouseOut={offHover} />
+                    <div className={styles.iconHover}>{stat && "ID:" + nick}</div>
+
                 </Link>
             </div>
             {isLog &&

@@ -13,3 +13,13 @@ nav>div {
 .icon:hover {
     color: red
 }
+
+.iconInfo:hover {
+    display: none;
+}
+
+.iconHover {
+    font-family: fantasy;
+    font-size: 20px;
+    background: linear-gradient(to left, rgb(255, 250, 200), rgb(255, 240, 255));
+}

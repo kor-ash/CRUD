@@ -4,12 +4,13 @@ import styles from './Board.module.css'
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
-const Board = ({ name, boardName, setBoardName }) => {
+const Board = ({ name, boardName, setBoardName, nick }) => {
     const [lis, setLis] = useState([])
     useEffect(() => {
         axios.post('http://localhost:5000/api/users/list', {
             boardName: boardName
         }).then(res => {
+            console.log(res.data)
             setLis(res.data)
         }
         )
@@ -26,7 +27,7 @@ const Board = ({ name, boardName, setBoardName }) => {
             </div>
             {lis.map((item, idx) => idx <= 3 ?
                 <li className={styles.BoardContent} key={idx}>
-                    <Link to={"../" + boardName + "/" + idx}>{item.title}</Link>
+                    <Link to={"../" + boardName + "/" + lis[0].idx}>{item.title}</Link>
                 </li> : null
             )}
         </div>

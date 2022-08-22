@@ -6,7 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from './Login.module.css'
 import { faInstagram, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import axios from 'axios';
-const Login = ({ isLog, setLog, isSign, setSign }) => {
+const Login = ({ isLog, setLog, isSign, setSign, nick, setNick }) => {
     const sendRequest = async () => {
         const response = await axios.get('http://localhost:5000/api/hello');
         console.log("data:", response.data);
@@ -25,6 +25,7 @@ const Login = ({ isLog, setLog, isSign, setSign }) => {
             password: password
         }).then(res => {
             setLog(res.data.loginSuccess)
+            setNick(res.data.nick)
             if (!res.data.loginSuccess) {
                 alert("로그인 실패!")
             }
