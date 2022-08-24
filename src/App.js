@@ -28,12 +28,18 @@ const App = () => {
         <Routes>
           {!isLog && <Route path="/" element={<Login isLog={isLog} setLog={setLog} nick={nick} setNick={setNick} />}></Route>}
           {isLog && <Route path="/home" element={<Home boardName={boardName} setBoardName={setBoardName} isLog={isLog} setLog={setLog} nick={nick} setNick={setNick}></Home>}></Route>}
-          {!isLog && <Route path="/home" element={<Login isLog={isLog} setLog={setLog} />}></Route>}
+          {!isLog && <Route path="/home" element={<Login isLog={isLog} setLog={setLog} setNick={setNick} />}></Route>}
           {!isLog && <Route path="/signup" element={<SignUp />}></Route>}
           {isLog && <Route path="/home/info" element={<Info nick={nick} />}></Route>}
           {isLog && <Route path={boardName + "/post"} element={<ContentPost nick={nick} setNick={setNick} boardName={boardName} boardText={boardText} setBoardText={setBoardText} />}></Route>}
           {isLog && <Route path={`/${boardName}`} element={<Content nick={nick} setNick={setNick} boardName={boardName} boardText={boardText} setBoardText={setBoardText} />} />}
-          {isLog && <Route path=":boardName/:id" element={<ContentEach nick={nick} setNick={setNick} boardName={boardName} boardText={boardText} setBoardText={setBoardText} />} />}
+          {isLog && <Route path=":boardName/:id" element={<ContentEach nick={nick} boardText={boardText} setBoardText={setBoardText} />} />}
+
+
+          {!isLog && <Route path="/home/info" element={<Login isLog={isLog} setLog={setLog} nick={nick} setNick={setNick} />}></Route>}
+          {!isLog && <Route path={boardName + "/post"} element={<Login isLog={isLog} setLog={setLog} nick={nick} setNick={setNick} />}></Route>}
+          {!isLog && <Route path={`/${boardName}`} element={<Login isLog={isLog} setLog={setLog} nick={nick} setNick={setNick} />} />}
+          {!isLog && <Route path=":boardName/:id" element={<Login isLog={isLog} setLog={setLog} nick={nick} setNick={setNick} />} />}
         </Routes>
       </Router>
     </div >

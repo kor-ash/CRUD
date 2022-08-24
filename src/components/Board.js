@@ -10,7 +10,6 @@ const Board = ({ name, boardName, setBoardName, nick }) => {
         axios.post('http://localhost:5000/api/users/list', {
             boardName: boardName
         }).then(res => {
-            console.log(res.data)
             setLis(res.data)
         }
         )

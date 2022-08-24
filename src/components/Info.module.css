@@ -1,11 +1,11 @@
 .InfoContainer {
     margin-top: 50px;
-    margin-left: 20%;
-    width: 60%;
+    margin-left: 25%;
+    width: 50%;
     height: 600px;
     border-radius: 15px;
     border: solid 1px black;
-    background: linear-gradient(to left, rgb(175, 250, 200), rgb(205, 240, 255));
+    background: lightgoldenrodyellow;
 }
 
 .InfoId {

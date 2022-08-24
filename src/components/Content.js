@@ -5,17 +5,16 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
-const Content = ({ boardName, boardText, setBoardText, nick }) => {
+const Content = ({ boardName, boardText, nick }) => {
     const [lis, setLis] = useState([])
     useEffect(() => {
         axios.post('http://localhost:5000/api/users/list', {
             boardName: boardName
         }).then(res => {
             setLis(res.data)
-            console.log(res)
         }
         )
-    }, [boardText])
+    }, [])
     return (
         <div className={styles.ContentContainer}>
             <div className={styles.ContentHeader}>
@@ -30,7 +29,7 @@ const Content = ({ boardName, boardText, setBoardText, nick }) => {
             </div>
             {lis.map((item, idx) =>
                 <li className={styles.BoardContent} key={idx}>
-                    <Link to={"../" + boardName + "/" + lis[0].idx}>{item.title}</Link>
+                    <Link to={"../" + boardName + "/" + lis[idx].idx}>{item.title}</Link>
                 </li>
             )}
         </div >

@@ -54,15 +54,16 @@
 }
 
 .PostHeader {
-    margin-left: 300px;
+    margin-left: 25%;
+    width: 60%;
     height: 25px;
 }
 
 .PostContent {
     text-align: center;
     margin-top: 50px;
-    margin-left: 100px;
-    width: 500px;
+    margin-left: 150px;
+    width: 80%;
 }
 
 .PostButton {
@@ -109,6 +110,92 @@
 }
 
 .ContentButtonEdit {
+    margin-top: 12px;
+    margin-left: 25px;
     font-size: 35px;
     width: 100px;
+}
+
+
+.ContentCommentContainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: lavender;
+}
+
+.ContentCommentText {
+    padding-top: 15px;
+    margin-top: -10px;
+    margin-left: 150px;
+}
+
+.ContentCommentText>textarea {
+    margin-left: 75px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.ContentCommentNick {
+    padding-top: 13px;
+    border-radius: 15px;
+    padding-right: 50px;
+    padding-left: 25px;
+    margin-right: 17%;
+    width: 1%;
+}
+
+.ContentCommentEdit {
+    padding-top: 25px;
+    margin-left: 25px;
+    margin-top: 15px;
+    font-size: 50px;
+}
+
+.ContentAllComment {
+    background-color: lavenderblush;
+    height: auto;
+}
+
+.ContentEachComment {
+    margin-top: 15px;
+    display: flex;
+    height: auto;
+}
+
+.ContentEachCommentNick {
+    padding-top: 13px;
+    border-radius: 15px;
+    padding-right: 50px;
+    padding-left: 25px;
+    margin-right: 2%;
+    width: 1%;
+}
+
+.ContentEachCommentDate {
+    padding-top: 15px;
+    padding-left: 13px;
+    font-size: 12px;
+    width: 20%;
+}
+
+.ContentEachCommentText {
+    margin-left: 10%;
+    width: 61%;
+    height: 50px;
+    border: solid 1px black;
+    overflow-y: scroll;
+}
+
+.ContentCommentEachDelete {
+    margin-top: 13px;
+    font-size: 30px;
+    margin-left: 24px;
+}
+
+.ContentCommentEachDeleteNot {
+    margin-top: 13px;
+    font-size: 30px;
+    margin-left: 24px;
+    width: 25px;
 }

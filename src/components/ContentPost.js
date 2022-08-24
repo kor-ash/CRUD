@@ -7,7 +7,6 @@ import axios from 'axios';
 const ContentPost = ({ boardName, boardText, setBoardText, nick }) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
-    console.log(boardText[boardName])
     const onSetText = (e) => {
         setText(e.target.value)
     }

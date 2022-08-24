@@ -10,12 +10,10 @@ const Info = ({ nick }) => {
                 nick: nick
             }
         }).then((res) => {
-            console.log(res)
             setLis(res.data)
         })
         //서버에서 유저가 쓴 글 조회
     }, [])
-    console.log(lis)
     return (
         <div className={styles.InfoContainer}>
             <div className={styles.InfoId}>ID:{nick}</div>

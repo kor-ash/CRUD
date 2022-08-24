@@ -14,12 +14,16 @@ nav>div {
     color: red
 }
 
-.iconInfo:hover {
-    display: none;
-}
+
 
 .iconHover {
+    margin-left: 15px;
     font-family: fantasy;
     font-size: 20px;
-    background: linear-gradient(to left, rgb(255, 250, 200), rgb(255, 240, 255));
+}
+
+.iconHidden {
+    position: fixed;
+    margin-left: 15px;
+    width: 40px;
 }

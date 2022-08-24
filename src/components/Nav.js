@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./FontAwesome";
 import styles from './Nav.module.css'
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,6 @@ const Nav = ({ isLog, setLog, nick }) => {
     const offHover = () => {
         setStat(false)
     }
-
     return (
         <nav className={styles.wrapper}>
             {/* 하단 네비게이션 최상위 태그 */}
@@ -32,11 +31,11 @@ const Nav = ({ isLog, setLog, nick }) => {
                 </Link>
             </div>
             <div>
-                <Link to="/home/info">
-                    <FontAwesomeIcon className={styles.iconInfo} icon="user" onMouseOver={onHover} onMouseOut={offHover} />
-                    <div className={styles.iconHover}>{stat && "ID:" + nick}</div>
+                <div className={styles.iconHover}>
+                    <Link to="/home/info"> <FontAwesomeIcon className={styles.icon} icon="user" onMouseOver={onHover} onMouseOut={offHover} /></Link>
+                    <span className={styles.iconHidden}>{stat && "ID:" + nick}</span>
+                </div>
 
-                </Link>
             </div>
             {isLog &&
                 <div>
